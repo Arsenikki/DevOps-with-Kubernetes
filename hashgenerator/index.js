@@ -1,13 +1,9 @@
-randomNumber = () => {
-    return Math.floor(Math.random() * 10) + 1;
-}
+const uuid = require('uuid');
+savedUuid = uuid.v4()
 
-var i = 0
-var hash = ""
-
-while (i < 20) {
-    var random = randomNumber()
-    hash = hash + random
-    i++
+var hasher = () => {
+    currentTime = new Date().toISOString()
+    console.log(currentTime, savedUuid );
+    setTimeout(hasher, 5000);
 }
-console.log(hash)
+hasher();
